@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Genre / Add Ingredient</title>
+</head>
+<body>
+    <form action="/createbgenre" method="POST">
+        {% csrf_token %}
+
+        <label for="genre" class="form-label">Add a Genre here!</label>
+        <input type="text" class="form-control" name="genre">
+        
+        <a href="/breakfast">Go back!</a>
+        <button>Submit Genre!</button>
+    </form>
+    <form action="/createbing" method="POST">
+        {% csrf_token %}
+
+        <label for="ing" class="form-label">Add an ingredient here!</label>
+        <input type="text" class="form-control" name="ing">
+
+    </form>
+</body>
+</html>
