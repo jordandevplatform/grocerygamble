@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready to eat?</title>
+</head>
+<body>
+    <form action="/choice" method="POST">
+    {% csrf_token %}
+    <p>Hello {{User.first_name}}! What meal is it?</p>
+    <label for='menu'>Time of Day</label>
+    <select name="menu">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+    </select>
+    <button>Submit</button>
+
+    </form>
+    <a href="/user">Previous Recipes!</a>
+</body>
+</html>

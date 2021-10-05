@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Genre / Add Ingredient</title>
+</head>
+<body>
+    <form action="/creategenre" method="POST">
+        {% csrf_token %}
+
+        <label for="genre" class="form-label">Add a Genre here!</label>
+        <input type="text" class="form-control" name="genre">
+        <!-- <input type="hidden" name="user" value="{{user.id}}"> -->
+        
+        <a href="/dash">Go back!</a>
+        <button>Submit Genre!</button>
+    </form>
+    <form action="/createing" method="POST">
+        {% csrf_token %}
+
+        <label for="ing" class="form-label">Add an ingredient here!</label>
+        <input type="text" class="form-control" name="ing">
+        <!-- <input type="hidden" name="user" value={{user.id}}> -->
+        <label for='menu'>Time of Day</label>
+        <select name="menu">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+        <!-- <label for="genre"></label>
+        <select name="genre">
+            {% for category in genres %}
+                <option value="{{category.named}}">{{category.named}}</category></option>
+            {% endfor %}
+        </select> -->
+        <input type="submit" value="Submit">
+</form>
+</body>
+</html>

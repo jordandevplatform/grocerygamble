@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>BLD</title>
+</head>
+<body>
+    <h>Yum!</h>
+
+    <!-- <table class="table">
+        <thead>
+        <tr>
+            <th>Genres</th>
+            <th>Ingredients</th>
+            <th>Actions</th>
+        </tr>
+        </thead> -->
+
+        <!-- <tbody>
+            {% for genre in genre %}
+            <tr>
+                <td>
+                    {{genre.named}}
+                </td>
+            </tr>
+            {% endfor %}
+            {% for ingredient in ingredients %}
+            <tr>
+                <td>
+                    {{ingredient.ingredient}}
+                </td>
+            </tr>
+            {% endfor %}
+            {% for x in table %}
+            <tr>
+                <button href="/delete">delete</button>
+            </tr>
+            {% endfor %}
+    </table> -->
+    <table>
+        <thead>
+            <tr>
+                <th style="margin: 20px" scope="col">Genres</th>
+                <th style="margin: 20px" scope="col">Ingredients</th>
+                <th style="margin: 20px" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for genre in genre %}
+            {% for ingredient in ingredients %}
+            <tr>
+                <td>{{genre.named}}</td>
+                <td>{{ingredient.ingredient}}</td>
+                <td><a href="/delete/{{ ingredient.id }}">Delete!</a></td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/addgenre">Add a genre/ingredient!</a>
+    <a href="/user">Previously Used Recipes</a>
+    <a href="/addgenre">Go back!</a>
+</body>
+</html>
